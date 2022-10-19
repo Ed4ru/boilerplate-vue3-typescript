@@ -1,0 +1,30 @@
+{
+  "fr": {
+    "USEFUL_LINKS": {
+      "VITE": "Serveur de développement & Builder",
+      "VUE_3": "Framework Javascript",
+      "TYPESCRIPT": "Surcouche permettant d'ajouter du typage et d'autres outils à JavaScript",
+      "PINIA": "Gestion de stores permettant d'avoir des données accessibles dans toute l'application",
+      "VUE_ROUTER": "Router officiel Vue.js",
+      "VITEST": "Framework de test super rapide",
+      "TAILWIND_CSS": "Framework CSS",
+      "FONT_AWESOME": "Librairie d'icônes",
+      "I18N": "Gestion multilingue pour l'internationalisation du site",
+      "ZOD": "Librairie de validation optimisée pour TypeScript"
+    }
+  },
+  "en": {
+    "USEFUL_LINKS": {
+      "VITE": "Blazing fast dev server + build tool",
+      "VUE_3": "Javascript framework",
+      "TYPESCRIPT": "Kinda like JavaScript with some useful features (typing, etc.)",
+      "PINIA": "Store management",
+      "VUE_ROUTER": "Official Vue.js router",
+      "VITEST": "Testing framework powered by Vite",
+      "TAILWIND_CSS": "Awesome CSS framework",
+      "FONT_AWESOME": "Awesome icons library",
+      "I18N": "Multilingual management for internationalization",
+      "ZOD": "Cool validation library optimized for TypeScript"
+    }
+  }
+}

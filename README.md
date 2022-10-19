@@ -4,7 +4,7 @@ This Vue 3 + TS "starter pack" project uses :
 
 - [Vite](https://vitejs.dev/) - Blazing fast dev server + build tool
 - [Vue 3](https://vuejs.org/) - Javascript framework (but you already know that ;))
-- [Typescript](https://www.typescriptlang.org/) - kinda like JavaScript with some useful features (typing, etc.)
+- [Typescript](https://www.typescriptlang.org/) - Kinda like JavaScript with some useful features (typing, etc.)
 - [Pinia](https://pinia.vuejs.org/) - Store management
 - [Vue-router](https://router.vuejs.org/) - Official Vue.js router
 
@@ -29,8 +29,6 @@ MIT
 
 # Things left to do
 
-- ESLint + Prettier config files
-- I18n example (in component & outside)
 - Zod example
 - Store use example
 - Font Awesome use example

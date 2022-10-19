@@ -1,15 +1,13 @@
 <template>
-  <div class="flex flex-col items-center">
-    <h1 class="text-slate-600 font-bold text-3xl my-5">
-      Vue 3 + TS Project Boilerplate
-    </h1>
-    <div class="flex flex-row space-x-3 mb-10">
-      <router-link :to="{ name: 'Home' }">Home</router-link>
-      <router-link :to="{ name: 'Useful Links' }">Useful Links</router-link>
-    </div>
+  <div class="absolute inset-0 pt-20">
+    <Header />
     <router-view />
   </div>
 </template>
+
+<script lang="ts" setup>
+import Header from '#/Header.vue';
+</script>
 
 <style lang="scss">
 * {
@@ -21,7 +19,7 @@ html {
 }
 
 #app {
-  @apply absolute inset-0 flex flex-col items-center;
+  @apply absolute inset-0;
 }
 </style>
 

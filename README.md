@@ -33,5 +33,3 @@ MIT
 - Store use example
 - Font Awesome use example
 - Unit test
-- Tailwind example
-- Navigation example

@@ -6,15 +6,15 @@
     </div>
     <p>This project comes with several pre-installed libraries :</p>
     <ul>
-      <li>{{ tl('VITE') }} {{ t('USEFUL_LINKS.VITE') }}</li>
-      <li>{{ tl('VUE_3') }} {{ t('USEFUL_LINKS.VUE_3') }}</li>
-      <li>{{ tl('TYPESCRIPT') }} {{ t('USEFUL_LINKS.TYPESCRIPT') }}</li>
-      <li>Pinia : {{ t('USEFUL_LINKS.PINIA') }}</li>
-      <li>Vue-router: {{ t('USEFUL_LINKS.PINIA') }}</li>
-      <li>Tailwind CSS : {{ t('USEFUL_LINKS.VUE_ROUTER') }}</li>
-      <li>Font Awesome : {{ t('USEFUL_LINKS.VITE') }}</li>
-      <li>I18n : {{ t('USEFUL_LINKS.VITE') }}</li>
-      <li>Zod : {{ t('USEFUL_LINKS.VITE') }}</li>
+      <li>Vite{{ tl('DOTS') }}{{ t('USEFUL_LINKS.VITE') }}</li>
+      <li>Vue 3{{ tl('DOTS') }}{{ t('USEFUL_LINKS.VUE_3') }}</li>
+      <li>TypeScript{{ tl('DOTS') }}{{ t('USEFUL_LINKS.TYPESCRIPT') }}</li>
+      <li>Pinia{{ tl('DOTS') }}{{ t('USEFUL_LINKS.PINIA') }}</li>
+      <li>Vue-router{{ tl('DOTS') }}{{ t('USEFUL_LINKS.VUE_ROUTER') }}</li>
+      <li>Tailwind CSS{{ tl('DOTS') }}{{ t('USEFUL_LINKS.TAILWIND_CSS') }}</li>
+      <li>Font Awesome{{ tl('DOTS') }}{{ t('USEFUL_LINKS.FONT_AWESOME') }}</li>
+      <li>I18n{{ tl('DOTS') }}{{ t('USEFUL_LINKS.I18N') }}</li>
+      <li>Zod{{ tl('DOTS') }}{{ t('USEFUL_LINKS.ZOD') }}</li>
     </ul>
   </div>
 </template>
@@ -44,14 +44,10 @@ li {
 <i18n>
 {
   "en": {
-    "VITE": "Vite:",
-    "VUE_3": "Vue 3:",
-    "TYPESCRIPT": "Typescript:"
+    "DOTS": ": "
   },
   "fr": {
-    "VITE": "Vite :",
-    "VUE_3": "Vue 3 :",
-    "TYPESCRIPT": "Typescript :"
+    "DOTS": " : "
   }
 }
 </i18n>

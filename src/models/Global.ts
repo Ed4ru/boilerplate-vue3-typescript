@@ -1,5 +1,5 @@
-import { AnyObject, AnyClass } from "@/types/global";
-import { typeConvertor } from "@/utils/dataManipulation";
+import { ValueOf, AnyObject, AnyClass } from '@/types/global';
+import { typeConvertor } from '@/utils/dataManipulation';
 
 export interface IGlobal {
   id?: number | null;
@@ -15,22 +15,22 @@ export class Global {
     this.createdAt = typeConvertor(Date, data?.createdAt);
   }
 
-  update(data: IGlobal) {
-    this.convertAndUpdate(data, "id");
-    this.convertAndUpdate(data, "createdAt", Date);
+  update(data: AnyObject<IGlobal>) {
+    this.convertAndUpdate(data, 'id');
+    this.convertAndUpdate(data, 'createdAt', Date);
   }
 
-  convertAndUpdate(
-    data: AnyObject,
+  convertAndUpdate<T, Y>(
+    data: AnyObject<T>,
     key: string,
-    type: AnyClass | null = null,
-    fallback: any = null
+    type: AnyClass<Y> | null = null,
+    fallback: ValueOf<T> | null = null
   ) {
     if (data[key] === undefined) return;
     if (data[key] === null && fallback !== undefined)
-      return Object.assign(this, { [key]: fallback });
-    if (type)
-      return Object.assign(this, { [key]: typeConvertor(type, data[key]) });
-    Object.assign(this, { [key]: data[key] });
+      Object.assign(this, { [key]: fallback });
+    else if (type)
+      Object.assign(this, { [key]: typeConvertor(type, data[key]) });
+    else Object.assign(this, { [key]: data[key] });
   }
 }

@@ -1,20 +1,20 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHistory } from 'vue-router';
 
 const routes = [
   {
-    path: "/",
-    redirect: "/home",
+    path: '/',
+    redirect: '/home'
   },
   {
-    path: "/home",
-    name: "Home",
-    component: () => import("@/views/Home.vue"),
+    path: '/home',
+    name: 'Home',
+    component: () => import('@/views/Home.vue')
   },
   {
-    path: "/links",
-    name: "Useful Links",
-    component: () => import("@/views/UsefulLinks.vue"),
-  },
+    path: '/links',
+    name: 'Useful Links',
+    component: () => import('@/views/UsefulLinks.vue')
+  }
 ];
 
 export const router = createRouter({
@@ -22,8 +22,8 @@ export const router = createRouter({
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) return { selector: to.hash };
-    return savedPosition ? savedPosition : { top: 0, behavior: "smooth" };
-  },
+    return savedPosition ? savedPosition : { top: 0, behavior: 'smooth' };
+  }
 });
 
 router.beforeEach((to, from, next) => {

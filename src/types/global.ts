@@ -1,7 +1,3 @@
-export interface AnyClass {
-  new (...args: any[]): any;
-}
-
-export interface AnyObject {
-  [key: string]: any;
-}
+export type ValueOf<T> = T[keyof T];
+export type AnyObject<T> = T & Record<string, unknown>;
+export type AnyClass<T> = { new (...args: unknown[]): T };

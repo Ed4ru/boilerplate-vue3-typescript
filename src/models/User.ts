@@ -1,5 +1,6 @@
-import { Global } from "@/models/Global";
-import type { IGlobal } from "@/models/Global";
+import { Global } from '@/models/Global';
+import type { IGlobal } from '@/models/Global';
+import { AnyObject } from '@/types/global';
 
 export interface IUser extends IGlobal {
   firstname?: string | null;
@@ -14,16 +15,16 @@ export class User extends Global {
 
   constructor(data?: IUser) {
     super(data);
-    this.firstname = data?.firstname ?? "John";
-    this.lastname = data?.firstname ?? "Doe";
-    this.email = data?.firstname;
+    this.firstname = data?.firstname ?? 'John';
+    this.lastname = data?.lastname ?? 'Doe';
+    this.email = data?.email ?? null;
   }
 
-  update(data: IUser) {
+  update(data: AnyObject<IGlobal>) {
     super.update(data);
-    this.convertAndUpdate(data, "firstname");
-    this.convertAndUpdate(data, "lastname");
-    this.convertAndUpdate(data, "email");
+    this.convertAndUpdate(data, 'firstname');
+    this.convertAndUpdate(data, 'lastname');
+    this.convertAndUpdate(data, 'email');
   }
 
   get fullname() {

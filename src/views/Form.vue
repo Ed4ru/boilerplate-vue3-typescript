@@ -15,6 +15,9 @@
           :type="key != 'id' ? 'string' : 'number'"
           v-model="userData[key]"
         />
+        <p class="text-sm text-red-500 italic mb-3">
+          {{ validationErrors[key] }}
+        </p>
       </div>
       <button type="submit">{{ tl('SUBMIT') }}</button>
     </form>
@@ -32,53 +35,31 @@
 <script lang="ts" setup>
 import UserCard from '#/UserCard.vue';
 
-import { reactive, computed } from 'vue';
+import { ref, reactive, computed, Ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useGlobalStore } from '@/store/global';
 import { validate } from '@/services/zod';
 import { createUserSchema } from '@/validation/createUser';
-import { ZodError, ZodInvalidTypeIssue, ZodIssue } from 'zod';
 
 const globalStore = useGlobalStore();
 const { t: tl } = useI18n({ inheritLocale: true, useScope: 'local' });
 
 const userData = reactive({
-  id: null,
-  email: null,
-  firstname: null,
-  lastname: null
+  id: undefined,
+  email: undefined,
+  firstname: undefined,
+  lastname: undefined
 });
 
-interface IFormErrors {
-  id: string | null;
-  firstname: string | null;
-  lastname: string | null;
-  email: string | null;
-}
-
-// const errors: IError[] = reactive([]);
-const validationErrors: IFormErrors = reactive({
-  id: null,
-  firstname: null,
-  lastname: null,
-  email: null
-});
+const validationErrors: Ref<Record<string, unknown>> = ref({});
 
 const users = computed(() => globalStore.users);
 
 const createUser = () => {
-  try {
-    validate(createUserSchema, userData);
-  } catch (error) {
-    if (error instanceof ZodError) {
-      error.issues.forEach((issue) => {
-        const path = issue.path[0] as 'id' | 'firstname' | 'lastname' | 'email';
-        validationErrors[path] = issue.message as string;
-      });
-    }
-    console.log(validationErrors);
-  }
-  globalStore.createNewUser(userData);
+  validationErrors.value = {};
+  const isValid = validate(createUserSchema, userData);
+  if (isValid === true) globalStore.createNewUser(userData);
+  else validationErrors.value = isValid;
 };
 </script>
 
@@ -92,7 +73,7 @@ label {
 }
 
 input {
-  @apply px-2 py-1 mb-3 rounded;
+  @apply px-2 py-1 rounded;
 }
 
 button {

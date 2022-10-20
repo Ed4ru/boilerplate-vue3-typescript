@@ -29,7 +29,5 @@ MIT
 
 # Things left to do
 
-- Zod example
-- Store use example
 - Font Awesome use example
 - Unit test

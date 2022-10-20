@@ -1,14 +1,9 @@
 <template>
   <nav>
     <ul class="flex flex-row space-x-2">
-      <li>
-        <RouterLink :to="{ name: 'Home' }">
-          {{ t('NAVIGATION.HOME') }}
-        </RouterLink>
-      </li>
-      <li>
-        <RouterLink :to="{ name: 'Useful Links' }">
-          {{ t('NAVIGATION.USEFUL_LINKS') }}
+      <li v-for="(link, index) in navigationLinks" :key="index">
+        <RouterLink :to="{ name: link.pathName }">
+          {{ t(link.name) }}
         </RouterLink>
       </li>
     </ul>
@@ -19,6 +14,21 @@
 import { i18n } from '@/services/i18n';
 
 const { t } = i18n.global;
+
+const navigationLinks = [
+  {
+    pathName: 'Home',
+    name: 'NAVIGATION.HOME'
+  },
+  {
+    pathName: 'Useful Links',
+    name: 'NAVIGATION.USEFUL_LINKS'
+  },
+  {
+    pathName: 'Form',
+    name: 'NAVIGATION.FORM'
+  }
+];
 </script>
 
 <style lang="scss" scoped>

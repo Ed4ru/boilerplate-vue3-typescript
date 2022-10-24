@@ -16,7 +16,7 @@
           v-model="userData[key]"
         />
         <p class="text-sm text-red-500 italic mb-3">
-          {{ validationErrors[key] }}
+          {{ validationErrors.createUser?.[key] }}
         </p>
       </div>
       <button type="submit">{{ tl('SUBMIT') }}</button>
@@ -35,10 +35,10 @@
 <script lang="ts" setup>
 import UserCard from '#/UserCard.vue';
 
-import { ref, reactive, computed, Ref } from 'vue';
+import { reactive, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useGlobalStore } from '@/store/global';
-import { validate } from '@/services/zod';
+import { validate, validationErrors } from '@/services/zod';
 import { createUserSchema } from '@/validation/createUser';
 
 const globalStore = useGlobalStore();
@@ -51,15 +51,11 @@ const userData = reactive({
   lastname: undefined
 });
 
-const validationErrors: Ref<Record<string, unknown>> = ref({});
-
 const users = computed(() => globalStore.users);
 
 const createUser = () => {
-  validationErrors.value = {};
-  const isValid = validate(createUserSchema, userData);
+  const isValid = validate('createUser', createUserSchema, userData);
   if (isValid === true) globalStore.createNewUser(userData);
-  else validationErrors.value = isValid;
 };
 </script>
 

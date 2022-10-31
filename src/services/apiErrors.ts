@@ -25,14 +25,14 @@ export const handleApiError = (
   name: string,
   apiError: AxiosError<Record<string, ApiError[]>>
 ) => {
-  switch (apiError.response.code) {
+  switch (apiError.request.code) {
     case 0:
       console.error('Network Error');
       break;
     case 403:
     case 404:
     case 500:
-      console.error(`${apiError.response.code} Error`);
+      console.error(`${apiError.request.code} Error`);
       break;
     case 400:
       if (apiError.response?.data?.errors) {

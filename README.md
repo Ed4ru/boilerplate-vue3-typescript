@@ -1,6 +1,6 @@
 # Vue 3 + TS Boilerplate
 
-This Vue 3 + TS "starter pack" project uses :
+### This Vue 3 + TS "starter pack" project uses :
 
 - [Vite](https://vitejs.dev/) - Blazing fast dev server + build tool
 - [Vue 3](https://vuejs.org/) - Javascript framework (but you already know that ;))
@@ -8,7 +8,7 @@ This Vue 3 + TS "starter pack" project uses :
 - [Pinia](https://pinia.vuejs.org/) - Store management
 - [Vue-router](https://router.vuejs.org/) - Official Vue.js router
 
-It also comes with some cool libraries :
+### It also comes with some cool libraries :
 
 - [Vitest](https://vitest.dev/) - Testing framework powered by Vite
 - [Tailwind CSS](https://tailwindcss.com/) - Awesome CSS framework
@@ -26,8 +26,3 @@ It also comes with some cool libraries :
 # Licence
 
 MIT
-
-# Things left to do
-
-- Font Awesome use example
-- Unit test

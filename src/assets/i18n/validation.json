@@ -1,0 +1,14 @@
+{
+  "fr": {
+    "VALIDATION": {
+      "REQUIRED": "Le champ { fieldName } est requis",
+      "INVALID_EMAIL_FORMAT": "Le format de l'email est invalide"
+    }
+  },
+  "en": {
+    "VALIDATION": {
+      "REQUIRED": "Field { fieldName } is required",
+      "INVALID_EMAIL_FORMAT": "Invalid email format"
+    }
+  }
+}

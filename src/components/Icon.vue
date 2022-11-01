@@ -1,12 +1,12 @@
 <template>
-  <font-awesome-icon :icon="[iconWeight, icon]" />
+  <font-awesome-icon :icon="[weight, icon]" />
 </template>
 
 <script setup lang="ts">
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 defineProps({
-  icon: { type: String, default: 'circle-play' },
-  iconWeight: { type: String, default: 'far' }
+  weight: { type: String, default: 'far' },
+  icon: { type: String, default: 'circle-play' }
 });
 </script>

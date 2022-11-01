@@ -1,9 +1,9 @@
 import { defineStore } from 'pinia';
-import { User } from '@/models/User';
-import type { IUser } from '@/models/User';
+import { Global } from '@/models/Global';
+import type { IGlobal } from '@/models/Global';
 
 interface IGlobalStoreState {
-  users: User[];
+  globals: Global[];
 }
 
 export const useGlobalStore = defineStore({
@@ -11,20 +11,20 @@ export const useGlobalStore = defineStore({
 
   state: () =>
     ({
-      users: []
+      globals: []
     } as IGlobalStoreState),
 
   getters: {
-    getUser: (state) => (userId: number) => {
-      state.users.find((user) => user.id === userId);
+    getGlobal: (state) => (globalId: number) => {
+      return state.globals.find((global) => global.id === globalId);
     }
   },
 
   actions: {
-    createNewUser(userData: IUser) {
-      const newUser = new User(userData);
-      this.users.push(newUser);
-      return newUser;
+    createNewGlobal(globalData: IGlobal) {
+      const newGlobal = new Global(globalData);
+      this.globals.push(newGlobal);
+      return newGlobal;
     }
   }
 });

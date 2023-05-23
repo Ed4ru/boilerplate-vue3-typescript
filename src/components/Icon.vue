@@ -5,8 +5,10 @@
 <script setup lang="ts">
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-defineProps({
-  weight: { type: String, default: 'far' },
-  icon: { type: String, default: 'circle-play' }
-});
+interface Props {
+  weight?: 'fas' | 'far' | 'fal' | 'fab';
+  icon?: string;
+}
+
+const { weight = 'far', icon = 'circle-play' } = defineProps<Props>();
 </script>

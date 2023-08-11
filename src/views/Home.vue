@@ -1,5 +1,5 @@
 <template>
-  <h1>Home.vue</h1>
+  <h1 class="p-2 rounded-md bg-slate-100">Home.vue</h1>
 </template>
 
 <script lang="ts" setup></script>
